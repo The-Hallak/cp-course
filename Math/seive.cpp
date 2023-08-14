@@ -10,7 +10,7 @@ const ll N=1e6+10;
 ll prime[N];
 
 //have only the primes numbers and used to factorize big numbers in O(sqrt(x))
-//but only iterate over primes witch is better.
+//but only iterate over primes which is better.
 vector<ll>primes;
 
 //O(n*log(log(n))); N around 1e6-1e7
