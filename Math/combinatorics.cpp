@@ -6,7 +6,7 @@ using namespace std;
 
 //iterative; O(log(n))
 ll pow(ll x,ll n,ll mod){
-    x%=MOD;
+    x%=mod;
     ll res=1;
     while(n){
         if(n%2){
@@ -20,7 +20,7 @@ ll pow(ll x,ll n,ll mod){
 
 //mod must be prime; O(log(mod))
 ll inverse_mod(ll x,ll mod){
-    x%=MOD;
+    x%=mod;
     return pow(x,mod-2,mod);
 }
 
@@ -31,6 +31,7 @@ ll factorial[N];
 
 // precalculate factorial for all numbers < N; O(N)
 void factorial_precalculate(){
+    factorial[0]=1;
     for(ll i=1;i<N;i++){
         factorial[i]=factorial[i-1]*i%MOD;
     }
@@ -38,5 +39,5 @@ void factorial_precalculate(){
 
 //calculate n choose r for n,r < N; O(log(MOD))
 ll nCr(ll n,ll r){
-    return factorial[n]*inverse_mod(factorial[n-r]*factorial[r]%MOD,MOD);
+    return factorial[n]*inverse_mod(factorial[n-r]*factorial[r]%MOD,MOD)%MOD;
 }
