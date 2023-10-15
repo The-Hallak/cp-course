@@ -44,5 +44,6 @@ vector<ll>factorize(ll x){
             x/=primes[i];
         }
     }
+    if(x>1)res.emplace_back(x);
     return res;
 }
